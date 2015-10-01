@@ -1,6 +1,8 @@
 void setup()
 {
   //your code here
+  size(300,300);
+  background((int)(Math.random() * 50)+146,(int)(Math.random() *50)+146,(int)(Math.random() * 50)+146);
 }
 void draw()
 {
@@ -14,9 +16,15 @@ void mouseDragged()
 class Snowflake
 {
   //class member variable declarations
+  int x,y;
+  boolean isMoving;
+
   Snowflake()
   {
     //class member variable initializations
+    x = (int)(Math.random()*300);
+    y = (int)(Math.random()*300);
+    isMoving = true;
   }
   void show()
   {
@@ -29,6 +37,8 @@ class Snowflake
   void erase()
   {
     //your code here
+    fill(0);
+    ellipse(x, y, 7, 7);
   }
   void move()
   {
