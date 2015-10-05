@@ -1,11 +1,11 @@
 Snowflake [] snow;
-int myX = 15;
+//int myX = 15;
 
 void setup()
 {
   //your code here
   size(300,300);
-  frameRate(30);
+  //frameRate(30);
 
   snow = new Snowflake [100];
   for (int i = 0 ; i < snow.length; i++)
@@ -31,15 +31,8 @@ void draw()
     snow[i].show();
   }
 
-  //clouds
-  fill(255);
-  ellipse(myX, 30, 40, 40);
-  ellipse(myX+40, 30, 70, 60);
-  ellipse(myX+80, 30, 40, 40);
-
-  myX++;
-
 }
+
 void mouseDragged()
 {
   //your code here
@@ -65,6 +58,21 @@ class Snowflake
     //your code here
     fill(255);
     ellipse(x, y, 5, 5);
+
+//clouds
+  for(int myX = 15; myX <= 450; myX = myX + 150)
+  {
+ //myX++;
+
+    fill(255);
+    ellipse(myX, 30, 40, 40);
+    ellipse(myX+40, 30, 70, 60);
+    ellipse(myX+80, 30, 40, 40);
+
+
+        }
+
+
   }
 
 //not sure if this is right
