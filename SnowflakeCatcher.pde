@@ -36,7 +36,8 @@ void draw()
 void mouseDragged()
 {
   //your code here
-  rect(0 , 250, 30, 30);
+  fill(70, 74, 115);
+  rect(mouseX, mouseY, 30, 30);
 }
 
 class Snowflake
@@ -75,13 +76,13 @@ class Snowflake
 
   }
 
-//not sure if this is right
+//doesnt work when it gets a diff color
   void lookDown()
   {
     //your code here
     if (y > 0 && y < 310)
     {
-      if(get(x,y) != color(0,0,0))
+      if(get(x,y) != color(255))
         isMoving = false;
 
       else
@@ -93,7 +94,7 @@ class Snowflake
   void erase()
   {
     //your code here
-    fill(0);
+    fill(255);
     ellipse(x, y, 7, 7);
   }
 
@@ -118,5 +119,3 @@ class Snowflake
 
   }
 }
-
-
