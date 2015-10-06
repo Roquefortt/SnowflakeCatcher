@@ -1,5 +1,4 @@
 Snowflake [] snow;
-//int myX = 15;
 
 void setup()
 {
@@ -43,14 +42,15 @@ void mouseDragged()
 class Snowflake
 {
   //class member variable declarations
-  int x,y;
+  int x,y, myXX;
   boolean isMoving;
 
   Snowflake()
   {
     //class member variable initializations
     x = (int)(Math.random()*300);
-    y = (int)(Math.random()*300);
+    y = (int)(Math.random()*300)+20;
+    myXX = 0;
     isMoving = true;
   }
 
@@ -60,35 +60,36 @@ class Snowflake
     fill(255);
     ellipse(x, y, 5, 5);
 
-//clouds
-  for(int myX = 15; myX <= 450; myX = myX + 150)
-  {
- //myX++;
+    //clouds. FIX LATER. might have to move to another function.
+    for(int myX = -10; myX <= 325; myX = myX + 125)
+    {
+      frameRate(15);
+      myXX++;
 
-    fill(255);
-    ellipse(myX, 30, 40, 40);
-    ellipse(myX+40, 30, 70, 60);
-    ellipse(myX+80, 30, 40, 40);
+      fill(255);
+      ellipse(myX+myXX, 30, 40, 40);
+      ellipse(myX+40+myXX, 30, 70, 60);
+      ellipse(myX+80+myXX, 30, 40, 40);
 
-
+        if (myX > 325)
+        {
+          myX = -10;
+          myXX++;
         }
 
-
-  }
+    }
+ 
+}
 
 //doesnt work when it gets a diff color
   void lookDown()
   {
     //your code here
-    if (y > 0 && y < 310)
-    {
-      if(get(x,y) != color(255))
-        isMoving = false;
+    if(get(x,y) != color(255))
+      isMoving = false;
 
-      else
-        isMoving = true;
-    }
-
+    else
+      isMoving = true;
   }
 
   void erase()
@@ -111,9 +112,9 @@ class Snowflake
   void wrap()
   {
     //your code here
-    if (y > 300)
+    if (y > 299)
     {
-      y = 0;
+      y = 20;
       x = (int)(Math.random()*300);
     }
 
