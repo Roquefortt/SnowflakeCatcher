@@ -29,14 +29,14 @@ void draw()
     snow[i].wrap();
     snow[i].show();
   }
-
 }
 
 void mouseDragged()
 {
   //your code here
-  fill(70, 74, 115);
-  rect(mouseX, mouseY, 30, 30);
+  strokeWeight(5);
+  stroke(0);
+  line(mouseX, mouseY, mouseX+1, mouseY+1);
 }
 
 class Snowflake
@@ -85,6 +85,7 @@ class Snowflake
   void lookDown()
   {
     //your code here
+//    if(y > 0 && y < 301 && get(x,y+1) != color(255))
     if(get(x,y) != color(255))
       isMoving = false;
 
