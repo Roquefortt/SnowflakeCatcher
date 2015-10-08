@@ -1,4 +1,5 @@
 Snowflake [] snow;
+int myX = 0;
 
 void setup()
 {
@@ -29,6 +30,8 @@ void draw()
     snow[i].wrap();
     snow[i].show();
   }
+
+  cloud();
 }
 
 void mouseDragged()
@@ -37,6 +40,33 @@ void mouseDragged()
   strokeWeight(5);
   stroke(0);
   line(mouseX, mouseY, mouseX+1, mouseY+1);
+}
+
+void cloud()
+{
+  fill(255);
+  ellipse(myX-150, 30, 40, 40);
+  ellipse(myX-100, 30, 70, 60);
+  ellipse(myX-60, 30, 40, 40);
+
+  ellipse(myX-20, 30, 40, 40);
+  ellipse(myX+20, 30, 70, 60);
+  ellipse(myX+60, 30, 40, 40);
+
+  ellipse(myX+115, 30, 40, 20);
+  ellipse(myX+135, 30, 40, 40);
+  ellipse(myX+175, 30, 70, 60);
+  ellipse(myX+215, 30, 40, 40);
+  ellipse(myX+235, 30, 40, 20);
+
+  myX ++;
+
+  if (myX > 325)
+  {
+    myX = -155;
+  }
+
+
 }
 
 class Snowflake
@@ -60,8 +90,8 @@ class Snowflake
     fill(255);
     ellipse(x, y, 5, 5);
 
-    //clouds. FIX LATER. might have to move to another function.
-    for(int myX = -10; myX <= 325; myX = myX + 125)
+    //clouds. ANIMATE.
+/*   for(int myX = -10; myX <= 325; myX = myX + 125)
     {
       frameRate(15);
       myXX++;
@@ -78,7 +108,7 @@ class Snowflake
         }
 
     }
- 
+*/ 
 }
 
 //doesnt work when it gets a diff color
