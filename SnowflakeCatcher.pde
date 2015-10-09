@@ -32,38 +32,43 @@ void draw()
   }
 
   cloud();
-}
-
-void mouseDragged()
-{
-  //your code here
-  strokeWeight(5);
-  stroke(0);
-  line(mouseX, mouseY, mouseX+1, mouseY+1);
+  
+  fill(171, 177, 199);
+  rect(mouseX, mouseY, 50, 40);
 }
 
 void cloud()
 {
-  fill(255);
-  ellipse(myX-150, 30, 40, 40);
-  ellipse(myX-100, 30, 70, 60);
-  ellipse(myX-60, 30, 40, 40);
+  fill(200);
+  frameRate(20);
+  
+  for (int myX = 0; myX < 301; myX = myX+140) 
+    {
+      ellipse(myX-20, 20, 40, 40);
+      ellipse(myX+20, 20, 70, 60);
+      ellipse(myX+60, 20, 40, 40);
+    }
+    
+  fill (255);
+  ellipse(myX-160, 40, 40, 30);
+  ellipse(myX-120, 40, 70, 50);
+  ellipse(myX-80, 40, 40, 30);
 
-  ellipse(myX-20, 30, 40, 40);
-  ellipse(myX+20, 30, 70, 60);
-  ellipse(myX+60, 30, 40, 40);
+  ellipse(myX-20, 40, 40, 40);
+  ellipse(myX+20, 40, 70, 60);
+  ellipse(myX+60, 40, 40, 40);
 
-  ellipse(myX+115, 30, 40, 20);
-  ellipse(myX+135, 30, 40, 40);
-  ellipse(myX+175, 30, 70, 60);
-  ellipse(myX+215, 30, 40, 40);
-  ellipse(myX+235, 30, 40, 20);
+  ellipse(myX+115, 40, 40, 20);
+  ellipse(myX+135, 40, 40, 40);
+  ellipse(myX+175, 40, 70, 60);
+  ellipse(myX+215, 40, 40, 40);
+  ellipse(myX+235, 40, 40, 20);
 
   myX ++;
 
-  if (myX > 325)
+  if (myX > 470)
   {
-    myX = -155;
+    myX = -215;
   }
 
 
@@ -87,46 +92,31 @@ class Snowflake
   void show()
   {
     //your code here
-    fill(255);
+    fill(255, 20);
     ellipse(x, y, 5, 5);
-
-    //clouds. ANIMATE.
-/*   for(int myX = -10; myX <= 325; myX = myX + 125)
-    {
-      frameRate(15);
-      myXX++;
-
-      fill(255);
-      ellipse(myX+myXX, 30, 40, 40);
-      ellipse(myX+40+myXX, 30, 70, 60);
-      ellipse(myX+80+myXX, 30, 40, 40);
-
-        if (myX > 325)
-        {
-          myX = -10;
-          myXX++;
-        }
-
-    }
-*/ 
 }
 
 //doesnt work when it gets a diff color
   void lookDown()
   {
     //your code here
-//    if(y > 0 && y < 301 && get(x,y+1) != color(255))
-    if(get(x,y) != color(255))
+    if(y > 0 && y < 301 && get(x,y) == color(171, 177, 199))
+    {
+      y = 20;
+      x = (int)(Math.random()*300);
+    }
+   
+/*    if(get(x,y+1) == color(60, 74, 115) && get(x,y+1) == color(255, 120))
       isMoving = false;
-
     else
       isMoving = true;
+*/      
   }
 
   void erase()
   {
     //your code here
-    fill(255);
+    fill(255, 120);
     ellipse(x, y, 7, 7);
   }
 
