@@ -32,7 +32,16 @@ void draw()
     snow[i].show();
   }
 
-fill(200);
+  cloud();
+  
+  fill(171, 177, 199);
+  rect(mouseX-25, mouseY-20, 50, 40);
+}
+
+void cloud()
+{
+
+  fill(200);
   for (int myXX = 0; myXX < 301; myXX = myXX+140) 
     {
       ellipse(myXX-20, 20, 40, 40);
@@ -42,15 +51,6 @@ fill(200);
     
 }
 
-  cloud();
-  
-  fill(171, 177, 199);
-  rect(mouseX-25, mouseY-20, 50, 40);
-}
-
-void cloud()
-{
-  fill(200);
   frameRate(20);
     
   fill (255);
