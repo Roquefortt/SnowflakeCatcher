@@ -32,10 +32,20 @@ void draw()
     snow[i].show();
   }
 
+fill(200);
+  for (int myXX = 0; myXX < 301; myXX = myXX+140) 
+    {
+      ellipse(myXX-20, 20, 40, 40);
+      ellipse(myXX+20, 20, 70, 60);
+      ellipse(myXX+60, 20, 40, 40);
+    }
+    
+}
+
   cloud();
   
   fill(171, 177, 199);
-  rect(mouseX, mouseY, 50, 40);
+  rect(mouseX-25, mouseY-20, 50, 40);
 }
 
 void cloud()
@@ -64,17 +74,6 @@ void cloud()
   {
     myX = -215;
   }
-
-  fill(200);
-  
-  for (int myXX = 0; myXX < 301; myXX = myXX+140) 
-    {
-      ellipse(myXX-20, 20, 40, 40);
-      ellipse(myXX+20, 20, 70, 60);
-      ellipse(myXX+60, 20, 40, 40);
-    }
-    
-}
 
 class Snowflake
 {
