@@ -64,7 +64,13 @@ void cloud()
     myX = -215;
   }
 
-
+  for (int myX = 0; myX < 301; myX = myX+140) 
+    {
+      ellipse(myX-20, 20, 40, 40);
+      ellipse(myX+20, 20, 70, 60);
+      ellipse(myX+60, 20, 40, 40);
+    }
+    
 }
 
 class Snowflake
