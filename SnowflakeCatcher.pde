@@ -1,6 +1,5 @@
 Snowflake [] snow;
 int myX = 0;
-int myXX = 0;
 
 void setup()
 {
@@ -40,18 +39,15 @@ void draw()
 
 void cloud()
 {
-
   fill(200);
-  for (int myXX = 0; myXX < 301; myXX = myXX+140) 
-    {
-      ellipse(myXX-20, 20, 40, 40);
-      ellipse(myXX+20, 20, 70, 60);
-      ellipse(myXX+60, 20, 40, 40);
-    }
-    
-}
-
   frameRate(20);
+  
+  for (int myX = 0; myX < 301; myX = myX+140) 
+    {
+      ellipse(myX-20, 20, 40, 40);
+      ellipse(myX+20, 20, 70, 60);
+      ellipse(myX+60, 20, 40, 40);
+    }
     
   fill (255);
   ellipse(myX-160, 40, 40, 30);
@@ -74,6 +70,9 @@ void cloud()
   {
     myX = -215;
   }
+
+
+}
 
 class Snowflake
 {
