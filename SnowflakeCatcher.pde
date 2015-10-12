@@ -22,6 +22,14 @@ void draw()
   background(60, 74, 115);
   noStroke();
 
+  fill(200);
+  for (int myX = 0; myX < 301; myX = myX+140) 
+    {
+      ellipse(myX-20, 20, 40, 40);
+      ellipse(myX+20, 20, 70, 60);
+      ellipse(myX+60, 20, 40, 40);
+    }
+    
   for (int i = 0; i < snow.length; i++)
   {
     snow[i].erase();
@@ -39,15 +47,8 @@ void draw()
 
 void cloud()
 {
-  fill(200);
   frameRate(20);
-  
-  for (int myX = 0; myX < 301; myX = myX+140) 
-    {
-      ellipse(myX-20, 20, 40, 40);
-      ellipse(myX+20, 20, 70, 60);
-      ellipse(myX+60, 20, 40, 40);
-    }
+
     
   fill (255);
   ellipse(myX-160, 40, 40, 30);
@@ -96,7 +97,6 @@ class Snowflake
     ellipse(x, y, 5, 5);
 }
 
-//doesnt work when it gets a diff color
   void lookDown()
   {
     //your code here
