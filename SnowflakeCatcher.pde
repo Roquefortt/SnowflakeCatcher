@@ -37,17 +37,10 @@ void draw()
   rect(mouseX, mouseY, 50, 40);
 }
 
-void cloud();
+void cloud()
 {
   fill(200);
   frameRate(20);
-  
-  for (int myX = 0; myX < 301; myX = myX+140) 
-    {
-      ellipse(myX-20, 20, 40, 40);
-      ellipse(myX+20, 20, 70, 60);
-      ellipse(myX+60, 20, 40, 40);
-    }
     
   fill (255);
   ellipse(myX-160, 40, 40, 30);
