@@ -21,14 +21,6 @@ void draw()
 
   background(60, 74, 115);
   noStroke();
-
-  fill(200);
-  for (int myX = 0; myX < 301; myX = myX+140) 
-    {
-      ellipse(myX-20, 20, 40, 40);
-      ellipse(myX+20, 20, 70, 60);
-      ellipse(myX+60, 20, 40, 40);
-    }
     
   for (int i = 0; i < snow.length; i++)
   {
@@ -39,6 +31,14 @@ void draw()
     snow[i].show();
   }
 
+  fill(200);
+  for (int myX = 0; myX < 301; myX = myX+140) 
+    {
+      ellipse(myX-20, 20, 40, 40);
+      ellipse(myX+20, 20, 70, 60);
+      ellipse(myX+60, 20, 40, 40);
+    }
+    
   cloud();
   
   fill(171, 177, 199);
