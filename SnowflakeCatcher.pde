@@ -65,6 +65,8 @@ void cloud()
     myX = -215;
   }
 
+  fill(200);
+  
   for (int myXX = 0; myXX < 301; myXX = myXX+140) 
     {
       ellipse(myXX-20, 20, 40, 40);
