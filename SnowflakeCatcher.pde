@@ -37,7 +37,7 @@ void draw()
   rect(mouseX, mouseY, 50, 40);
 }
 
-void cloud()
+void cloud();
 {
   fill(200);
   frameRate(20);
