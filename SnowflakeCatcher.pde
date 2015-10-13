@@ -24,7 +24,6 @@ void draw()
     
   for (int i = 0; i < snow.length; i++)
   {
-    snow[i].erase();
     snow[i].lookDown();
     snow[i].move();
     snow[i].wrap();
@@ -45,9 +44,8 @@ void draw()
 void cloud()
 {
   frameRate(20);
-
-    
   fill (255);
+  
   ellipse(myX-160, 40, 40, 30);
   ellipse(myX-120, 40, 70, 50);
   ellipse(myX-80, 40, 40, 30);
@@ -89,7 +87,7 @@ class Snowflake
   void show()
   {
     //your code here
-    fill(255, 20);
+    fill(255, 200);
     ellipse(x, y, 5, 5);
     
     fill(171, 177, 199);
@@ -117,7 +115,7 @@ class Snowflake
   void erase()
   {
     //your code here
-    fill(255, 120);
+    fill(255);
     ellipse(x, y, 7, 7);
   }
 
