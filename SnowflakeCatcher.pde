@@ -40,9 +40,6 @@ void draw()
     }
     
   cloud();
-  
-  fill(171, 177, 199);
-  rect(mouseX-25, mouseY-20, 50, 40);
 }
 
 void cloud()
@@ -78,7 +75,7 @@ void cloud()
 class Snowflake
 {
   //class member variable declarations
-  int x,y, myXX;
+  int x,y;
   boolean isMoving;
 
   Snowflake()
@@ -86,7 +83,6 @@ class Snowflake
     //class member variable initializations
     x = (int)(Math.random()*300);
     y = (int)(Math.random()*300)+20;
-    myXX = 0;
     isMoving = true;
   }
 
@@ -95,6 +91,9 @@ class Snowflake
     //your code here
     fill(255, 20);
     ellipse(x, y, 5, 5);
+    
+    fill(171, 177, 199);
+    rect(mouseX-25, 260, 50, 40);
 }
 
   void lookDown()
@@ -105,6 +104,8 @@ class Snowflake
       y = 20;
       x = (int)(Math.random()*300);
     }
+    else
+      isMoving = true;
    
 /*    if(get(x,y+1) == color(60, 74, 115) && get(x,y+1) == color(255, 120))
       isMoving = false;
