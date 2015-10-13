@@ -7,7 +7,7 @@ void setup()
   size(300,300);
   //frameRate(30);
 
-  snow = new Snowflake [200];
+  snow = new Snowflake [100];
   for (int i = 0 ; i < snow.length; i++)
   { 
     snow[i] = new Snowflake();
